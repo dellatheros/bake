@@ -118,7 +118,7 @@ html,body{
     background-color: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
-#navbarInstruction .dropdown-menu a{
+#navbarInstruction .dropdown-item{
     color: white;
     background-color: transparent;
     transition: all 0.5s;
@@ -145,7 +145,7 @@ html,body{
 }
 #carouselCyber .carousel-caption p{
     letter-spacing: 4px;
-    line-height: 1.8rem;
+    line-height: 1.8em;
     width: 70%;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -174,11 +174,9 @@ html,body{
     letter-spacing: 1px;
     padding: 1rem 0 5rem ;
 }
-.welcome__courses .col-4{
+.welcome__courses .welcome__item{
     padding: 2rem;
-}
-.welcome__courses{
-    max-width: 1140px;
+    margin-bottom: 1.5rem;
 }
 .welcome__item i{
     font-size: 2rem;
@@ -210,7 +208,6 @@ html,body{
 }
 .ourStats__content{
     text-align: center;
-    max-width: 1140px;
     color: white;
 }
 .ourStats__item i{
@@ -230,10 +227,9 @@ html,body{
 }
 /* OFFER */
 .offer__content{
-    max-width: 1140px;
     text-align: center;
 }
-.offer__content .col-4{
+.offer__content .offer-col{
     padding: 15px;
 }
 .offer__item{
@@ -297,6 +293,7 @@ html,body{
 .feedback__content .feedback__bottom img{
     width: 28%;
     display: inline-block;
+    object-fit: cover;
 }
 .feedback__bottom{
     display: flex;
@@ -326,9 +323,6 @@ html,body{
     opacity: 1;
 }
 /* NEWS */
-.news__content.container{
-    max-width: 1140px;
-}
 .news__content img{
     border: 2px solid rgb(222, 222, 222);;
 }
@@ -382,9 +376,6 @@ html,body{
 footer{
     background-color: black;
 }
-.footer__top .container{
-    max-width: 1140px;
-}
 .footer__top h3 {
     font-size: 24px;
     font-weight: bold;
@@ -419,6 +410,7 @@ footer{
 }
 .footer__contact{
     margin-bottom: 1rem;
+    display: flex;
 }
 .footer__contact i{
     width: 32px;
@@ -492,6 +484,22 @@ footer{
 }
 /****************** RESPONSIVE *********************/
 /* HEADING */
+@media screen and (max-width:1199.98px){
+    #carouselCyber .carousel-caption{
+        top: 50%;
+    }
+    #carouselCyber .carousel-caption h1{
+        font-size: 4vw;
+    }
+    #carouselCyber .carousel-caption p{
+        font-size: 1.6vw;
+        margin-bottom: 0.5em;
+    }
+    #carouselCyber .carousel-caption button{
+        font-size: 1.5vw;
+        padding: 0.8em 1em;
+    }
+}
 @media screen and (max-width:991.98px) {
     .navInstruction .navbar-brand p:first-child{
         font-size: 3vw;
@@ -500,9 +508,42 @@ footer{
         font-size: 1.5vw;
     }
 }
+@media screen and (max-width:767.98px){
+    #navbarInstruction .navbar-nav{
+        background-color: #eee;
+        text-align: center;
+    }
+    #navbarInstruction .dropdown-menu{
+        background-color: #e0e1e2;
+        border: none;
+        text-align: center;
+    }
+    #navbarInstruction  .dropdown-item{
+        color: black;
+    }
+}
 @media screen and (max-width:575.98px) {
     .header__left a{
         display: block;
+    }
+    .footer__form button {
+        padding: 10px;
+        border: 0;
+        font-size: 14px;
+    }
+    .footer__form input{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:425px) {
+    #carouselCyber{
+        height: 250px;
+    }
+    #carouselCyber .carousel-inner,#carouselCyber .carousel-item,#carouselCyber .carousel-item img{
+        height: 100%;
+    }
+    #carouselCyber .carousel-item img{
+        object-fit: cover;
     }
 }
 @media screen and (max-width: 320px){
@@ -523,4 +564,9 @@ footer{
         font-size: 12px;
         padding: 5px
     }   
+}
+@media screen and (min-width:575px) and (max-width:992px){
+    .feedback__content .feedback__bottom img{
+        width: 55%;
+    }
 }
